@@ -1,0 +1,49 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+
+  <?php if ($this->addTeamImage): ?>
+    <figure class="image_container<?= $this->floatClass ?>"<?php if ($this->margin): ?> style="<?= $this->margin ?>"<?php endif; ?>>
+
+      <?php if ($this->href): ?>
+        <a href="<?= $this->href ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle ?>"<?php endif; ?><?= $this->attributes ?>>
+      <?php endif; ?>
+
+      <?php $this->insert('picture_default', $this->picture); ?>
+
+      <?php if ($this->href): ?>
+        </a>
+      <?php endif; ?>
+
+      <?php if ($this->caption): ?>
+        <figcaption class="caption"><?= $this->caption ?></figcaption>
+      <?php endif; ?>
+
+    </figure>
+  <?php endif; ?>
+
+  <div class="text_container">
+    <div class="inside">
+      <p class="team__name">
+        <?= $this->team_name ?>
+      </p>
+	  
+      <?php if($this->team_position): ?>
+	      <div class="team__position">
+	        <?= $this->team_position ?>
+	      </div>
+      <?php endif; ?>
+      
+      <?php if($this->team_description): ?>
+	      <div class="team__description">
+	        <?= $this->team_description ?>
+	      </div>
+      <?php endif; ?>
+      
+      <?php if($this->team_email): ?>
+	      <div class="team__email">
+	        <a href="<?= $this->team_email_link ?>" title="<?= $this->team_name ?>">E-Mail</a>
+	      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+
+</div>
